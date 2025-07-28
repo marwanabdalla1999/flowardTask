@@ -26,6 +26,8 @@ Dependency injection via Hilt
 
 Type-safe navigation via Kotlin Serialization
 
+
+
 Tech Stack
 Jetpack Compose
 
@@ -40,6 +42,8 @@ Hilt
 Coil
 
 Kotlin Serialization
+
+
 
 Project Structure
 graphql
