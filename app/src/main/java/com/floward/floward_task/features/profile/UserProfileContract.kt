@@ -14,8 +14,6 @@ data class ProfileState(
         avatarUrl = "https://i.pravatar.cc/150?img=3")
 ) : ViewState
 
-sealed class ProfileEvent : ViewEvent {
-    data object SendFeedbackClicked : ProfileEvent()
-}
+sealed class ProfileEvent : ViewEvent
 
 sealed class ProfileEffect : ViewSideEffect

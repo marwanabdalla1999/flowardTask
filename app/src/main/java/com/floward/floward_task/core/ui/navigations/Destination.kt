@@ -10,4 +10,4 @@ sealed interface Destination
 data object DashboardDestination : Destination
 
 @Serializable
-data class ProfileDestination(val feedbackMessage: String? = null) : Destination
+data class ProfileDestination(val feedbackMessage: String = "") : Destination

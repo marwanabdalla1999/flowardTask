@@ -12,6 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.floward.floward_task.core.ui.bottomNav.BottomNavItem
@@ -30,9 +32,9 @@ fun MainScreen() {
                         navController.currentBackStackEntryAsState().value?.destination?.route
                     listOf(BottomNavItem.Dashboard, BottomNavItem.Profile).forEach { item ->
                         NavigationBarItem(
-                            selected = currentRoute == item.route,
+                            selected = currentRoute == item.title,
                             onClick = {
-                                if (currentRoute != item.route) navController.navigate(item.route) {
+                                if (currentRoute != item.title) navController.navigate(item.destination) {
                                     popUpTo(navController.graph.startDestinationId) {
                                         saveState = true
                                     }
@@ -52,7 +54,7 @@ fun MainScreen() {
         ) { padding ->
             AppNavHost(
                 navController = navController,
-                modifier = Modifier.padding(padding)
+                modifier = Modifier.padding(padding).padding(vertical = 20.dp)
             )
         }
     }

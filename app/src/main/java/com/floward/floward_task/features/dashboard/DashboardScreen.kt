@@ -3,7 +3,9 @@ package com.floward.floward_task.features.dashboard
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.OutlinedTextField
@@ -44,9 +46,12 @@ fun DashboardScreen(
     when {
         state.isLoading -> CircularProgressIndicator()
         state.weather != null -> {
-            Column(horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(16.dp)) {
-                AsyncImage(state.weather.iconUrl,contentDescription = null)
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                AsyncImage(state.weather.iconUrl, contentDescription = null, modifier = Modifier.size(100.dp))
                 Text("City: ${state.weather.city}")
                 Text("Temp: ${state.weather.temperature}°C")
                 Text("Condition: ${state.weather.condition}")

@@ -11,10 +11,6 @@ class ProfileViewModel @Inject constructor() :
     override fun setInitialState(): ProfileState = ProfileState()
 
     override fun handleEvents(event: ProfileEvent) {
-        when (event) {
-            is ProfileEvent.SendFeedbackClicked -> {
-                setEffect { ProfileEffect.ShowFeedbackDialog("Feedback received!") }
-            }
-        }
+
     }
 }

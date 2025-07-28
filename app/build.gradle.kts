@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.weatherapp"
+    namespace = "com.floward.floward_task"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.weatherapp"
+        applicationId = "com.floward.floward_task"
         minSdk = 29
         targetSdk = 34
         versionCode = 1
@@ -20,7 +20,9 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "OPEN_WEATHER_API_KEY", "\"YOUR_API_KEY_HERE\"")
+
+        // i put only api hardcoded here for easy testing but it's not a good practice to put api keys in code
+        buildConfigField("String", "OPEN_WEATHER_API_KEY", "\"cd0174bdb21b8cd18176a3c62108f385\"")
     }
 
     buildFeatures {

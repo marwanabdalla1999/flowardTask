@@ -1,5 +1,6 @@
 package com.floward.floward_task.di
 
+import com.floward.floward_task.BuildConfig
 import com.floward.floward_task.data.dataSource.remoteDataSource.WeatherApiService
 import com.floward.floward_task.data.repositoriesImpl.WeatherRepositoryImpl
 import com.floward.floward_task.domain.repositories.IWeatherRepository
@@ -42,7 +43,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideWeatherRepository(api: WeatherApiService): IWeatherRepository =
-        WeatherRepositoryImpl(api, apiKey = "YOUR_API_KEY_HERE")
+        WeatherRepositoryImpl(api, apiKey = BuildConfig.OPEN_WEATHER_API_KEY)
 
     @Provides
     @Singleton

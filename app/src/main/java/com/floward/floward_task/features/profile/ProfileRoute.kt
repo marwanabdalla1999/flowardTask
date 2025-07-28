@@ -11,9 +11,9 @@ import com.floward.floward_task.core.ui.navigations.ProfileDestination
 fun NavGraphBuilder.profileRoute(){
 
     composable<ProfileDestination>{ backStackEntry ->
-        val arg = backStackEntry.toRoute<String>()
+        val feedback = backStackEntry.toRoute<ProfileDestination>().feedbackMessage
         val viewModel: ProfileViewModel = hiltViewModel()
         val state by viewModel.viewState.collectAsStateWithLifecycle()
-        ProfileScreen(feedBackMessage = arg,state = state)
+        ProfileScreen(feedBackMessage = feedback,state = state)
     }
 }
